@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
-import * as cors from 'cors';
+import cors from 'cors';
 
 
 const app = express();
@@ -8,7 +8,7 @@ const PORT = 3333;
 
 const prisma = new PrismaClient();
 
-app.use(cors.default());
+app.use(cors());
 app.use(express.json());
 
 app.post('/users', async (req: Request, res: Response) => {
